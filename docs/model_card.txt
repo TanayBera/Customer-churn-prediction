@@ -1,0 +1,53 @@
+
+MODEL CARD - Customer Churn Prediction
+=======================================
+
+MODEL DETAILS
+  Name     : Customer Churn Predictor
+  Type     : LogisticRegression
+  Version  : 1.0
+
+INTENDED USE
+  Purpose  : Identify customers likely to cancel subscription
+  Users    : Customer success and retention teams
+  Not for  : Credit decisions or legal judgements
+
+TRAINING DATA
+  Dataset  : IBM Telco Customer Churn
+  Size     : 7,043 customers
+  Train    : 80% (5,634 customers)
+  Test     : 20% (1,409 customers)
+  Features : 26 (original + engineered)
+
+PERFORMANCE
+  Recall   : 0.759  (catches 76% of churners)
+  Precision: 0.521
+  F1 Score : 0.618
+  AUC ROC  : 0.844
+
+TOP 3 FEATURES
+  1. num_services
+  2. tenure
+  3. MonthlyCharges
+
+LIMITATIONS
+  - Trained on telecom data only
+  - Needs monthly retraining
+  - New customers harder to predict
+  - Performance may drop if market changes
+
+ETHICS
+  - No demographic features used
+  - Predictions are probabilistic not definitive
+  - Human review recommended for high value customers
+
+HOW TO USE
+  1. Load : joblib.load('models/churn_model.pkl')
+  2. Scale: apply scaler.pkl first (Logistic Regression)
+  3. Pred : model.predict_proba(X)[:, 1]
+  4. Flag : probability > 0.5 = high churn risk
+
+MAINTENANCE
+  Retrain  : Monthly or when recall drops below 0.70
+  Monitor  : Track prediction distribution weekly
+=======================================

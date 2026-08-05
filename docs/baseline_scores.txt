@@ -1,0 +1,11 @@
+BASELINE SCORES - Day 4
+======================
+Best baseline: Logistic Regression
+Recall    : 0.759
+F1 Score  : 0.618
+
+Day 5 models must beat these scores!
+                 Model  Accuracy  Recall  Precision     F1
+0    Always Predict No     0.730   0.000      0.000  0.000
+1          Simple Rule     0.762   0.441      0.579  0.501
+2  Logistic Regression     0.746   0.759      0.521  0.618

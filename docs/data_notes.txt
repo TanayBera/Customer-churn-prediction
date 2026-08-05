@@ -1,0 +1,51 @@
+==================================================
+DATA EXPLORATION NOTES — Day 1
+==================================================
+
+DATASET OVERVIEW
+----------------
+Total Customers   : 7,043
+Total Columns     : 21
+Target Column     : Churn (Yes/No)
+
+CHURN DISTRIBUTION
+------------------
+Stayed (No)  : 5,174 customers (73.5%)
+Churned (Yes): 1,869 customers (26.5%)
+>> CLASS IMBALANCE EXISTS — must handle in modeling step
+
+DATA QUALITY ISSUES FOUND
+-------------------------
+1. TotalCharges column:
+   - Type is 'object' (text) instead of float
+   - 11 rows have blank spaces instead of numbers
+   - These are new customers with tenure=0
+   - FIX: Convert to numeric, replace blanks with 0
+
+KEY PATTERNS FOUND
+------------------
+1. Churned customers have SHORTER tenure (leave early)
+2. Churned customers pay HIGHER monthly charges
+3. Month-to-month contracts churn most (~42%)
+4. Two-year contracts rarely churn (~3%)
+5. Fiber optic internet customers churn more
+
+IMPORTANT COLUMNS FOR PREDICTION
+---------------------------------
+- tenure (how long they've been customer)
+- MonthlyCharges (how much they pay)
+- Contract (type of contract)
+- InternetService (type of internet)
+- TechSupport (has support or not)
+
+COLUMNS TO DROP
+---------------
+- customerID: just an ID, not useful for prediction
+
+NEXT STEPS (Day 3-4)
+--------------------
+1. Fix TotalCharges column
+2. Convert all text columns to numbers
+3. Create new features (tenure groups, charge ratios)
+4. Build baseline model
+==================================================

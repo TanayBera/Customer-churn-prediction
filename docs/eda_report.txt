@@ -1,0 +1,42 @@
+
+EDA REPORT - Customer Churn Prediction
+========================================
+
+DATASET
+  Name    : IBM Telco Customer Churn
+  Rows    : 7,043 customers
+  Columns : 25 features
+  Target  : Churn (Yes/No)
+
+CHURN SPLIT
+  Stayed  : 5,174 (73.5%)
+  Churned : 1,869 (26.5%)
+  Problem : Class imbalance - must handle in modeling
+
+DATA QUALITY ISSUES
+  1. TotalCharges stored as text not number
+  2. 11 rows have blank TotalCharges (new customers)
+  Fix: Convert to numeric, fill blanks with 0
+
+KEY FINDINGS
+  1. Tenure is strongest predictor
+     - First 6 months : ~50% churn
+     - After 2 years  : < 10% churn
+  2. Contract type is critical
+     - Month-to-month : ~43% churn
+     - Two year       : ~3% churn
+  3. Monthly charges matter
+     - Churned avg    : $74/month
+     - Stayed avg     : $61/month
+  4. No TechSupport = 3x higher churn risk
+
+BUSINESS IMPACT
+  Monthly revenue at risk : $139,131
+  Annual revenue at risk  : $1,669,570
+
+NEXT STEPS (Day 3-4)
+  1. Fix data quality issues
+  2. Create 7 new engineered features
+  3. Convert text columns to numbers
+  4. Build baseline model
+========================================

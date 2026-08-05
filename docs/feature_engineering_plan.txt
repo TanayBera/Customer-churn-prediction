@@ -1,0 +1,33 @@
+
+FEATURE ENGINEERING PLAN - Day 3
+==================================
+
+NEW FEATURES TO CREATE:
+
+1. is_new_customer
+   Formula : tenure <= 6  -> 1, else 0
+   Why     : First 6 months has 50%+ churn rate
+
+2. is_loyal_customer
+   Formula : tenure >= 24 -> 1, else 0
+   Why     : After 2 years churn drops below 10%
+
+3. charges_per_month
+   Formula : TotalCharges / (tenure + 1)
+   Why     : Normalizes payment pattern over time
+
+4. num_services
+   Formula : Count of all addon services subscribed
+   Why     : More services = more invested = less likely to leave
+
+5. has_support
+   Formula : TechSupport == Yes OR OnlineSecurity == Yes -> 1
+   Why     : Support users feel more value, churn 3x less
+
+6. is_high_value
+   Formula : MonthlyCharges > 70 -> 1, else 0
+   Why     : High paying customers behave differently
+
+7. contract_risk
+   Formula : Month-to-month=2, One year=1, Two year=0
+   Why     : Contract type is the strongest churn signal
