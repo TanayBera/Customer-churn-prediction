@@ -72,7 +72,7 @@ Recall was treated as the primary business metric, with a minimum target of **0.
 
 ### Model comparison visualization
 
-![Model comparison: Logistic Regression, Random Forest and XGBoost](docs/model_comparison.png)
+![Model comparison: Logistic Regression, Random Forest and XGBoost](docs/model_comparison_chart.png)
 
 **Result:** Logistic Regression achieved the highest recall of **75.9%**, exceeding the 75% target. Random Forest achieved the highest accuracy (77.9%), precision (57.4%), F1-score (63.7%), and ROC-AUC (0.845).
 
